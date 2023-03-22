@@ -77,15 +77,25 @@ border: aqua 2px solid;
         for ($a = 0; $a <= $largo - 1; $a++) {
 
             for ($b = 0; $b <= $largo1 - 1; $b++) {
-
+               
                 if($texto[$a]== end($letras)){
                 $texto2[$a] = $letras[($largo1-1)-($largo1-$num)];
 
                 }
+
+
+                
                 elseif ($texto1[$a] == $letras[$b]) {
+                    $letracadena=implode($letras);
+
+                    if(strpos($letracadena, $letras[$b]) + $num > 24){
+                        $texto2[$a] =$letras[24-(26-$num)];
                     
+                    }else{
 
                      $texto2[$a] = $letras[$b + $num];
+                    }
+                     
 
 
 
